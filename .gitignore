@@ -1,0 +1,20 @@
+#Arquivos temporários e backups automáticos do GDevelop
+*.autosave
+*.json-autosave
+*.gdg~
+*.tmp
+
+#Pasta de exportação (builds do jogo)
+build/
+dist/
+exports/
+
+#Logs e cache (se houver)
+*.log
+.cache/
+.gdevelop/
+
+#Ignorar arquivos do sistema operacional
+.DS_Store
+Thumbs.db
+desktop.ini
