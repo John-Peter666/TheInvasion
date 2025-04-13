@@ -233,8 +233,8 @@
     {
       "b": 209,
       "disableInputWhenNotFocused": true,
-      "mangledName": "Mini_32Gane_32Survival",
-      "name": "Mini Gane Survival",
+      "mangledName": "Mini_32Game_32Survival",
+      "name": "Mini Game Survival",
       "r": 209,
       "standardSortMethod": true,
       "stopSoundsOnStartup": true,
