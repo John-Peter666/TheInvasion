@@ -874,12 +874,13 @@
               "actions": [
                 {
                   "type": {
-                    "value": "SetAngle"
+                    "value": "RotateTowardAngle"
                   },
                   "parameters": [
                     "Chopflight",
-                    "=",
-                    "0"
+                    "0",
+                    "180",
+                    ""
                   ]
                 }
               ]
@@ -894,19 +895,20 @@
                   "parameters": [
                     "Chopflight",
                     "TopDownMovement",
-                    "\"Down\""
+                    "\"Right\""
                   ]
                 }
               ],
               "actions": [
                 {
                   "type": {
-                    "value": "SetAngle"
+                    "value": "RotateTowardAngle"
                   },
                   "parameters": [
                     "Chopflight",
-                    "=",
-                    "30"
+                    "30",
+                    "180",
+                    ""
                   ]
                 }
               ]
@@ -921,19 +923,20 @@
                   "parameters": [
                     "Chopflight",
                     "TopDownMovement",
-                    "\"Up\""
+                    "\"Left\""
                   ]
                 }
               ],
               "actions": [
                 {
                   "type": {
-                    "value": "SetAngle"
+                    "value": "RotateTowardAngle"
                   },
                   "parameters": [
                     "Chopflight",
-                    "=",
-                    "-30"
+                    "-30",
+                    "180",
+                    ""
                   ]
                 }
               ]
