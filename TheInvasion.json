@@ -126,6 +126,14 @@
         "name": "Assets\\Chopflight\\sprites\\helicopter\\helicopter_8.png",
         "smoothed": false,
         "userAdded": false
+      },
+      {
+        "file": "Assets/Chopflight/sprites/bullet/bullet.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Assets\\Chopflight\\sprites\\bullet\\bullet.png",
+        "smoothed": false,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -520,6 +528,7 @@
           "effects": [],
           "behaviors": [
             {
+              "maxSpeed": 200,
               "name": "TopDownMovement",
               "type": "TopDownMovementBehavior::TopDownMovementBehavior",
               "acceleration": 1200,
@@ -529,7 +538,6 @@
               "customIsometryAngle": 30,
               "deceleration": 1800,
               "ignoreDefaultControls": false,
-              "maxSpeed": 200,
               "movementAngleOffset": 0,
               "rotateObject": false,
               "viewpoint": "TopDown"
@@ -837,6 +845,66 @@
               ]
             }
           ]
+        },
+        {
+          "adaptCollisionMaskAutomatically": true,
+          "assetStoreId": "",
+          "name": "bullet",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": true,
+                      "image": "Assets\\Chopflight\\sprites\\bullet\\bullet.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": [
+                        [
+                          {
+                            "x": 0,
+                            "y": 0
+                          },
+                          {
+                            "x": 13,
+                            "y": 0
+                          },
+                          {
+                            "x": 13,
+                            "y": 8
+                          },
+                          {
+                            "x": 0,
+                            "y": 8
+                          }
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "objectsFolderStructure": {
@@ -844,6 +912,9 @@
         "children": [
           {
             "objectName": "Chopflight"
+          },
+          {
+            "objectName": "bullet"
           }
         ]
       },
@@ -943,6 +1014,67 @@
             }
           ],
           "parameters": []
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Tiro"
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "KeyFromTextReleased"
+              },
+              "parameters": [
+                "",
+                "\"Space\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "bullet",
+                "Chopflight.BoundingBoxCenterX()",
+                "Chopflight.BoundingBoxCenterY()",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "ChangePlan"
+              },
+              "parameters": [
+                "bullet",
+                "=",
+                "1"
+              ]
+            },
+            {
+              "type": {
+                "value": "AddForceAL"
+              },
+              "parameters": [
+                "bullet",
+                "Chopflight.Angle()",
+                "300",
+                "1"
+              ]
+            }
+          ]
         }
       ],
       "layers": [
